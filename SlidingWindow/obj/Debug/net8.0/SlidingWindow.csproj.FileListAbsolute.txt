@@ -12,3 +12,4 @@ C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\refint\SlidingWindo
 C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.pdb
 C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.genruntimeconfig.cache
 C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\ref\SlidingWindow.dll
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.sourcelink.json

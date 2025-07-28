@@ -21,7 +21,11 @@ class Program
 
 
         Console.WriteLine("Maximum sum of a subarray of size K: " +
-                          FindMaxSumSubArray(3, new int[] { 2, 1, 5, 1, 3, 2 }));
+                          FindMaxSumSubArray(3, [2, 1, 5, 1, 3, 2]));
+
+
+        Console.WriteLine("Smallest of a subarray of size s: " +
+                          FindMinSubArray(7, [2, 1, 5, 2, 3, 2]));
     }
 
     public static double[] FindAverages1(int k, int[] arr)
@@ -132,6 +136,34 @@ class Program
         }
 
         return maxSum;
+    }
+
+    public static int FindMinSubArray(int targetSum, int[] numbers)
+    {
+        int windowStart = 0;
+        int windowSum = 0;
+        int minLength = int.MaxValue; // пока ставим "бесконечность"
+
+        for (int windowEnd = 0; windowEnd < numbers.Length; windowEnd++)
+        {
+            // Добавляем новый элемент в окно
+            windowSum += numbers[windowEnd];
+
+            // Сжимаем окно, пока сумма >= targetSum
+            while (windowSum >= targetSum)
+            {
+                // Проверяем, является ли текущее окно самым коротким
+                int currentLength = windowEnd - windowStart + 1;
+                minLength = Math.Min(minLength, currentLength);
+
+                // Убираем элемент, который слева (он выйдет из окна)
+                windowSum -= numbers[windowStart];
+                windowStart++;
+            }
+        }
+
+        // Если minLength не поменялось — значит, подходящего окна не было
+        return (minLength == int.MaxValue) ? 0 : minLength;
     }
 
 
