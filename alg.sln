@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoSum", "TwoSum\TwoSum.csproj", "{FA0DE504-A8EE-468F-A3BA-365627606484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyNumber", "HappyNumber\HappyNumber.csproj", "{81E4C63B-A21A-4EA6-9ABD-AAD49C4C5D40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingWindow", "SlidingWindow\SlidingWindow.csproj", "{75F9545F-18D5-4EB7-A3A4-4B7E1759D9D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA0DE504-A8EE-468F-A3BA-365627606484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0DE504-A8EE-468F-A3BA-365627606484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0DE504-A8EE-468F-A3BA-365627606484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0DE504-A8EE-468F-A3BA-365627606484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E4C63B-A21A-4EA6-9ABD-AAD49C4C5D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E4C63B-A21A-4EA6-9ABD-AAD49C4C5D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E4C63B-A21A-4EA6-9ABD-AAD49C4C5D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E4C63B-A21A-4EA6-9ABD-AAD49C4C5D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75F9545F-18D5-4EB7-A3A4-4B7E1759D9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75F9545F-18D5-4EB7-A3A4-4B7E1759D9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75F9545F-18D5-4EB7-A3A4-4B7E1759D9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75F9545F-18D5-4EB7-A3A4-4B7E1759D9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

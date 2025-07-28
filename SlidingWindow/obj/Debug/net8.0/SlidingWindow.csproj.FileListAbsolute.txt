@@ -1,0 +1,14 @@
+C:\Users\nb\RiderProjects\alg\SlidingWindow\bin\Debug\net8.0\SlidingWindow.exe
+C:\Users\nb\RiderProjects\alg\SlidingWindow\bin\Debug\net8.0\SlidingWindow.deps.json
+C:\Users\nb\RiderProjects\alg\SlidingWindow\bin\Debug\net8.0\SlidingWindow.runtimeconfig.json
+C:\Users\nb\RiderProjects\alg\SlidingWindow\bin\Debug\net8.0\SlidingWindow.dll
+C:\Users\nb\RiderProjects\alg\SlidingWindow\bin\Debug\net8.0\SlidingWindow.pdb
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.AssemblyInfoInputs.cache
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.AssemblyInfo.cs
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.csproj.CoreCompileInputs.cache
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.dll
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\refint\SlidingWindow.dll
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.pdb
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\SlidingWindow.genruntimeconfig.cache
+C:\Users\nb\RiderProjects\alg\SlidingWindow\obj\Debug\net8.0\ref\SlidingWindow.dll
