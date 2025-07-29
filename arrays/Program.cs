@@ -1,4 +1,4 @@
-﻿namespace tasks;
+﻿namespace arrays;
 
 class Program
 {
@@ -29,6 +29,18 @@ class Program
         // int target = int.Parse(input);
         // int count = NumSum(target, array1);
         // Console.WriteLine(count);
+
+        var shift = ShiftArrayInRight([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        PrintArray(shift);
+
+        var shift2 = ShiftArrayInLeft([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        PrintArray(shift2);
+
+        var pairs = GetAdjacentPairs(new[] { 1, 2, 3, 4 });
+        foreach (var pair in pairs)
+        {
+            Console.Write($"({pair.Item1}, {pair.Item2}) ");
+        }
     }
 
     private static int SumAll(int[] array)
@@ -176,6 +188,105 @@ class Program
         }
 
         return sum;
+    }
+
+    private static int[] ShiftArrayInRight(int[] array)
+    {
+        int temp = array[array.Length - 1];
+
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            array[i] = array[i - 1];
+        }
+
+        array[0] = temp;
+
+
+        return array;
+    }
+
+    private static int[] ShiftArrayInLeft(int[] array)
+    {
+        int temp = array[0];
+
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            array[i] = array[i + 1];
+        }
+
+        array[array.Length - 1] = temp;
+
+
+        return array;
+    }
+
+    private static int[] ShiftRightCopy(int[] array)
+    {
+        if (array.Length == 0) return array;
+
+        int[] result = new int[array.Length];
+
+        for (int i = 1; i < array.Length; i++)
+        {
+            result[i] = array[i - 1];
+        }
+
+        result[0] = array[array.Length - 1];
+
+        return result;
+    }
+
+    private static (int, int)[] DoubleWindow(int[] array)
+    {
+        if (array.Length == 0) return new (int, int)[] { };
+
+        var result = new (int, int)[array.Length - 1];
+
+        for (int i = 0; i <= array.Length - 2; i++)
+        {
+            result[i] = (array[i], array[i + 1]);
+        }
+
+        return result;
+        return array.Zip(array.Skip(1), (a, b) => (a, b)).ToArray();
+    }
+
+    private static List<(int, int)> GetAdjacentPairs(int[] array)
+    {
+        var result = new List<(int, int)>();
+
+        if (array.Length < 2)
+            return result;
+
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            result.Add((array[i], array[i + 1]));
+        }
+
+        return result;
+    }
+
+    private static (int, int)[] GetAdjacentPairs2(int[] array)
+    {
+        if (array.Length < 2)
+            return Array.Empty<(int, int)>();
+
+        var result = new (int, int)[array.Length - 1];
+
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            result[i] = (array[i], array[i + 1]);
+        }
+
+        return result;
+    }
+
+    private static IEnumerable<(int, int)> GetAdjacentPairs3(int[] array)
+    {
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            yield return (array[i], array[i + 1]);
+        }
     }
 
 
