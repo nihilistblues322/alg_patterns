@@ -15,6 +15,12 @@ class Program
 
         var negatives = ReplaceNegative(array2);
         PrintArray(negatives);
+
+        var negatives2 = ReplaceNegativeOnZero([8, -3, 4, 7, 9, -12, 15, -21, 6, -11, 5]);
+        PrintArray(negatives2);
+
+        var reverse = ReverseArray([8, 3, 4, 7, 9, 12, 15, 21, 6, 11, 5]);
+        PrintArray(reverse);
     }
 
     private static int SumAll(int[] array)
@@ -87,7 +93,7 @@ class Program
     private static int[] ReplaceNegative(int[] array)
     {
         if (array.Length <= 0) return [];
-        
+
         for (int i = 0; i < array.Length; i++)
         {
             if (array[i] < 0)
@@ -99,6 +105,35 @@ class Program
         return array;
     }
 
+    private static int[] ReplaceNegativeOnZero(int[] array)
+    {
+        if (array.Length <= 0) return [];
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] < 0)
+            {
+                array[i] = 0;
+            }
+        }
+
+        return array;
+    }
+
+    private static List<int> ReverseArray(int[] array)
+    {
+        if (array.Length <= 0) return [];
+
+        List<int> reversed = [];
+
+        for (int i = array.Length - 1; i >= 0; i--)
+        {
+            reversed.Add(array[i]);
+        }
+
+        return reversed;
+    }
+
     static void PrintArray(int[] array)
     {
         if (array.Length == 0)
@@ -107,6 +142,11 @@ class Program
             return;
         }
 
+        Console.WriteLine($"[{string.Join(", ", array)}]");
+    }
+
+    static void PrintArray(List<int> array)
+    {
         Console.WriteLine($"[{string.Join(", ", array)}]");
     }
 }
