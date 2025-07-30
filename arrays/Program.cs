@@ -30,7 +30,7 @@ class Program
         // int count = NumSum(target, array1);
         // Console.WriteLine(count);
 
-        var shift = ShiftArrayInRight([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        var shift = ShiftRight([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         PrintArray(shift);
 
         var shift2 = ShiftArrayInLeft([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -40,6 +40,12 @@ class Program
         foreach (var pair in pairs)
         {
             Console.Write($"({pair.Item1}, {pair.Item2}) ");
+        }
+
+        var nums = DoubleWindow([1, 2, 3, 4, 5, 6, 7, 8]);
+        foreach (var num in nums)
+        {
+            Console.Write($"({num.Item1}, {num.Item2}) ");
         }
     }
 
@@ -238,7 +244,7 @@ class Program
 
     private static (int, int)[] DoubleWindow(int[] array)
     {
-        if (array.Length == 0) return new (int, int)[] { };
+        if (array.Length < 2) return new (int, int)[] { };
 
         var result = new (int, int)[array.Length - 1];
 
@@ -304,5 +310,52 @@ class Program
     static void PrintArray(List<int> array)
     {
         Console.WriteLine($"[{string.Join(", ", array)}]");
+    }
+
+    private static int[] Reverse1(int[] array)
+    {
+        int left = 0;
+        int right = array.Length - 1;
+
+        while (left < right)
+        {
+            var temp1 = array[right];
+            var temp2 = array[left];
+            array[left] = temp1;
+            array[right] = temp2;
+
+            left++;
+            right--;
+        }
+
+        return array;
+    }
+
+    private static int[] ShiftRight(int[] array)
+    {
+        int temp = array[array.Length - 1];
+
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            array[i] = array[i - 1];
+        }
+
+        array[0] = temp;
+
+        return array;
+    }
+
+    private static int[] ShiftLeft(int[] array)
+    {
+        int temp = array[0];
+
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            array[i] = array[i + 1];
+        }
+
+        array[array.Length - 1] = temp;
+
+        return array;
     }
 }

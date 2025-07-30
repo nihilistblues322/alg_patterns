@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingWindow", "SlidingWin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arrays", "arrays\arrays.csproj", "{F0D86633-CD8E-4F98-A132-16D462AEA2F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "strings", "strings\strings.csproj", "{D70CD403-AC1C-493A-9911-B3A96E2046F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "math", "math\math.csproj", "{E77A1F0F-CC02-433D-AC26-E8027CF5F735}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{F0D86633-CD8E-4F98-A132-16D462AEA2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0D86633-CD8E-4F98-A132-16D462AEA2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0D86633-CD8E-4F98-A132-16D462AEA2F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70CD403-AC1C-493A-9911-B3A96E2046F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70CD403-AC1C-493A-9911-B3A96E2046F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70CD403-AC1C-493A-9911-B3A96E2046F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70CD403-AC1C-493A-9911-B3A96E2046F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E77A1F0F-CC02-433D-AC26-E8027CF5F735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E77A1F0F-CC02-433D-AC26-E8027CF5F735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E77A1F0F-CC02-433D-AC26-E8027CF5F735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E77A1F0F-CC02-433D-AC26-E8027CF5F735}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
