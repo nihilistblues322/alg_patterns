@@ -47,6 +47,15 @@ class Program
         {
             Console.Write($"({num.Item1}, {num.Item2}) ");
         }
+
+        var doubleWin = DoubleWin([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        foreach (var num in doubleWin)
+        {
+            Console.Write($"({num.Item1}, {num.Item2}) ");
+        }
+
+        var ds = DoubleSumWin([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        PrintArray(ds);
     }
 
     private static int SumAll(int[] array)
@@ -357,5 +366,31 @@ class Program
         array[array.Length - 1] = temp;
 
         return array;
+    }
+
+    private static (int, int)[] DoubleWin(int[] array)
+    {
+        if (array.Length < 2) return [];
+
+        var windows = new (int, int)[array.Length - 1];
+
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            windows[i] = (array[i], array[i + 1]);
+        }
+
+        return windows;
+    }
+
+    private static int[] DoubleSumWin(int[] array)
+    {
+        var sum = new int[array.Length - 2];
+
+        for (int i = 0; i < array.Length - 2; i++)
+        {
+            sum[i] = (array[i] + array[i + 1] + array[i + 2]);
+        }
+
+        return sum;
     }
 }
