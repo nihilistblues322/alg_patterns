@@ -22,7 +22,7 @@ class Program
         var isPal = pal == new string(pal.Reverse().ToArray());
         Console.WriteLine(isPal);
 
-        Console.WriteLine(IsPalindrome(pal));
+        Console.WriteLine(IsPalindrome("A man, a plan, ab21 canal: Panama"));
         Console.WriteLine(IsCleanPalindrome("A man, a plan, a canal: Panama"));
     }
 
@@ -282,5 +282,25 @@ class Program
         var cleaned = new string(str.ToLower().Where(char.IsLetterOrDigit).ToArray());
 
         return cleaned == new string(cleaned.Reverse().ToArray());
+    }
+
+    static string ReplaceWordManually(string input)
+    {
+        var words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 0; i < words.Length; i++)
+        {
+            string clean = words[i].TrimEnd('.', ',', ';', '!', '?');
+
+            if (string.Equals(clean, "кот", StringComparison.OrdinalIgnoreCase))
+            {
+                char lastChar = words[i][words[i].Length - 1];
+                bool hasPunct = !char.IsLetterOrDigit(lastChar);
+
+                words[i] = "пёс" + (hasPunct ? lastChar.ToString() : "");
+            }
+        }
+
+        return string.Join(" ", words);
     }
 }
