@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace strings;
 
@@ -24,6 +25,15 @@ class Program
 
         Console.WriteLine(IsPalindrome("A man, a plan, ab21 canal: Panama"));
         Console.WriteLine(IsCleanPalindrome("A man, a plan, a canal: Panama"));
+
+        Console.WriteLine(CountWords2("Hello World"));
+        Console.WriteLine(ReplaceDigits2("h3ll0 w0rld 2024"));
+
+        var resd = CountCharFrequency("hello");
+        foreach (var c in resd)
+        {
+            Console.WriteLine(c);
+        }
     }
 
     // ---------------------------------------------------------------------------------------------------------------
@@ -302,5 +312,125 @@ class Program
         }
 
         return string.Join(" ", words);
+    }
+
+    static int CountWords(string input)
+    {
+        return input.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+
+    static int CountWords2(string input)
+    {
+        var inWord = false;
+        int count = 0;
+
+        foreach (var c in input)
+        {
+            if (char.IsWhiteSpace(c))
+            {
+                inWord = false;
+            }
+            else if (!inWord)
+            {
+                inWord = true;
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    static string ReplaceDigits(string input)
+    {
+        var digits = new List<char> { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+        var sb = new StringBuilder();
+
+        foreach (var c in input)
+        {
+            if (!digits.Contains(c))
+            {
+                sb.Append(c);
+            }
+        }
+
+        return sb.ToString();
+    }
+
+    static string ReplaceDigits2(string input)
+    {
+        var sb = new StringBuilder();
+
+        foreach (var c in input)
+        {
+            if (!char.IsDigit(c))
+            {
+                sb.Append(c);
+            }
+        }
+
+        return sb.ToString();
+    }
+
+    static string FindLongestWord(string input)
+    {
+        var words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        string longest = "";
+
+        foreach (var word in words)
+        {
+            if (word.Length > longest.Length)
+                longest = word;
+        }
+
+        return longest;
+    }
+
+    static string FindLongestWordLinq(string input)
+    {
+        return input
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+            .OrderByDescending(w => w.Length)
+            .FirstOrDefault() ?? "";
+    }
+
+    static string FindLongestWordClean(string input)
+    {
+        var words = Regex.Split(input, @"\W+");
+        string longest = "";
+
+        foreach (var word in words)
+        {
+            if (word.Length > longest.Length)
+                longest = word;
+        }
+
+        return longest;
+    }
+
+
+    static Dictionary<char, int> CountCharFrequency(string input)
+    {
+        var res = new Dictionary<char, int>();
+
+        foreach (var c in input)
+        {
+            if (res.ContainsKey(c))
+            {
+                res[c]++;
+            }
+            else
+            {
+                res[c] = 1;
+            }
+        }
+
+        return res;
+    }
+
+    static Dictionary<char, int> CountCharFrequencyLinq(string input)
+    {
+        return input
+            .GroupBy(c => c)
+            .ToDictionary(g => g.Key, g => g.Count());
     }
 }
