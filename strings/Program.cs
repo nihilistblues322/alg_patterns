@@ -10,30 +10,32 @@ class Program
         var str = "Arquebus";
         Console.WriteLine(SumVowelsAndConsonants(str));
 
-        var res = ReverseStr(str);
+        var res = ReverseS(str);
         Console.WriteLine(res);
 
         var res2 = ReverseStrInPlace(str);
         Console.WriteLine(res2);
 
         Console.WriteLine(CapitalizeWordsWithArray("Hello world"));
-        Console.WriteLine(FirstUpp("Hello world"));
+        Console.WriteLine(Up("Hello world"));
 
         var pal = "racecar";
         var isPal = pal == new string(pal.Reverse().ToArray());
         Console.WriteLine(isPal);
 
-        Console.WriteLine(IsPalindrome("A man, a plan, ab21 canal: Panama"));
+        Console.WriteLine(IP("A man, a plan, ab21 canal: Panama"));
         Console.WriteLine(IsCleanPalindrome("A man, a plan, a canal: Panama"));
 
-        Console.WriteLine(CountWords2("Hello World"));
-        Console.WriteLine(ReplaceDigits2("h3ll0 w0rld 2024"));
+        Console.WriteLine(CountS2("Hello World Hello"));
+        Console.WriteLine(RMDig2("h3ll0 w0rld 2024"));
 
-        var resd = CountCharFrequency("hello");
+        var resd = Cw("hello");
         foreach (var c in resd)
         {
             Console.WriteLine(c);
         }
+
+        Console.WriteLine(FBW("A man, a plan, a canal: Panama"));
     }
 
     // ---------------------------------------------------------------------------------------------------------------
@@ -373,13 +375,12 @@ class Program
 
     static string FindLongestWord(string input)
     {
-        var words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var words = input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
         string longest = "";
 
         foreach (var word in words)
         {
-            if (word.Length > longest.Length)
-                longest = word;
+            if (word.Length > longest.Length) longest = word;
         }
 
         return longest;
@@ -432,5 +433,137 @@ class Program
         return input
             .GroupBy(c => c)
             .ToDictionary(g => g.Key, g => g.Count());
+    }
+
+
+    //---
+    static string ReverseS(string input)
+    {
+        var chars = input.ToLower().ToCharArray();
+        var sb = new StringBuilder();
+
+        for (int i = chars.Length - 1; i >= 0; i--)
+        {
+            sb.Append(chars[i]);
+        }
+
+        return new string(chars.ToArray());
+    }
+
+    static string Up(string input)
+    {
+        var isNew = true;
+        var sb = new StringBuilder();
+
+        foreach (var c in input)
+        {
+            if (char.IsWhiteSpace(c))
+            {
+                sb.Append(c);
+                isNew = true;
+            }
+            else
+            {
+                sb.Append(isNew ? char.ToUpper(c) : char.ToLower(c));
+                isNew = false;
+            }
+        }
+
+        return sb.ToString();
+    }
+
+    static bool IP(string input)
+    {
+        var chars = new string(input.ToLower().Where(char.IsLetterOrDigit).ToArray());
+
+        return chars == new string(chars.ToArray());
+    }
+
+    static int CountS(string input)
+    {
+        return input.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+
+    static int CountS2(string input)
+    {
+        var inWord = false;
+        var count = 0;
+
+        foreach (var c in input)
+        {
+            if (char.IsWhiteSpace(c))
+            {
+                inWord = false;
+            }
+            else if (!inWord)
+            {
+                inWord = true;
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    static string RMDig(string input)
+    {
+        var chars = input.ToLower().ToCharArray();
+
+        var word = new StringBuilder();
+
+        foreach (var c in chars)
+        {
+            if (!char.IsDigit(c))
+            {
+                word.Append(c);
+            }
+        }
+
+        return word.ToString();
+    }
+
+    static string RMDig2(string input)
+    {
+        return new string(input.Where(c => !char.IsDigit(c)).ToArray());
+    }
+
+    static Dictionary<char, int> Cw(string input)
+    {
+        var dict = new Dictionary<char, int>();
+
+        foreach (var c in input)
+        {
+            if (dict.ContainsKey(c))
+            {
+                dict[c]++;
+            }
+            else
+            {
+                dict[c] = 1;
+            }
+        }
+
+        return dict;
+    }
+
+    static Dictionary<char, int> Cw2(string input)
+    {
+        return input.GroupBy(c => c).ToDictionary(c => c.Key, g => g.Count());
+    }
+
+    static string FBW(string input)
+    {
+        var res = "";
+        var chars = input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (var c in chars)
+        {
+            if (chars.Length > c.Length)
+            {
+                res = c;
+            } 
+        }
+
+        return res;
     }
 }
