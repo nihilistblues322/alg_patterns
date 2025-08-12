@@ -4,9 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] numbers = { 5, 3, 2, 4, 8 };
+        int[] numbers = { 5, 2, 8, 1, 3 };
 
-        BubbleSort(numbers);
+        SelectionSort(numbers);
 
         Console.WriteLine(string.Join(", ", numbers));
     }
@@ -51,4 +51,44 @@ class Program
     }
 
     //=====
+
+    static void SelectionSort(int[] array)
+    {
+        int n = array.Length;
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            int minIndex = i;
+
+            for (int j = i + 1; j < n; j++)
+            {
+                if (array[j] < array[minIndex])
+                    minIndex = j;
+            }
+
+            if (minIndex != i)
+            {
+                (array[i], array[minIndex]) = (array[minIndex], array[i]);
+            }
+        }
+    }
+
+    //=====
+
+    public static void InsertionSort(int[] array)
+    {
+        for (int i = 1; i < array.Length; i++)
+        {
+            int key = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] > key)
+            {
+                array[j + 1] = array[j];
+                j--;
+            }
+
+            array[j + 1] = key;
+        }
+    }
 }

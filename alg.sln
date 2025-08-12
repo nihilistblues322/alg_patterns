@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "math", "math\math.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sort", "sort\sort.csproj", "{37CDD8CB-3358-484C-90B0-CBAFA0B5E4CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "packs1", "packs1\packs1.csproj", "{76E72EB0-F01D-45C3-B684-7A762C1B0025}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{37CDD8CB-3358-484C-90B0-CBAFA0B5E4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37CDD8CB-3358-484C-90B0-CBAFA0B5E4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37CDD8CB-3358-484C-90B0-CBAFA0B5E4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E72EB0-F01D-45C3-B684-7A762C1B0025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E72EB0-F01D-45C3-B684-7A762C1B0025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E72EB0-F01D-45C3-B684-7A762C1B0025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E72EB0-F01D-45C3-B684-7A762C1B0025}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -561,7 +561,7 @@ class Program
             if (chars.Length > c.Length)
             {
                 res = c;
-            } 
+            }
         }
 
         return res;
