@@ -32,34 +32,32 @@ class Program
         return sum;
     }
 
-    static void MultiplicationTable(int n)
+    static void MultiplicationTable(int input)
     {
-        for (int i = 1; i <= 10; i++)
+        int sum = 0;
+
+        for (int i = 0; i < input; i++)
         {
-            Console.WriteLine($"{n} × {i} = {n * i}");
+            Console.WriteLine($"{input} * {i} = {i * input}");
         }
     }
 
-    static bool IsPositive(int input)
+    static int FactorialIterative(int n)
     {
-        return input > 0;
-    }
-
-    static long FactorialIterative(int n)
-    {
-        long result = 1;
+        int sum = 1;
         for (int i = 2; i <= n; i++)
-            result *= i;
-        return result;
+        {
+            sum *= i;
+        }
+
+        return sum;
     }
 
-    static string EvenOrOdd(int input)
+    static string EvenOrOdd(int n)
     {
-        if (input % 2 == 0)
-            return "Even";
-
-        return "Odd";
+        return n % 2 == 0 ? "Even" : "Odd";
     }
+
 
     //==
 
