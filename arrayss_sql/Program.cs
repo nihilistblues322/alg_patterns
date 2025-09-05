@@ -75,6 +75,19 @@ class Program
         var phonesB = new int[] { 333, 444, 555, 666 };
 
         PrintArray(DMerge(phonesA, phonesB));
+
+
+        string[] array1 = { "123-456-7890", "111-222-3333", "(444) 555-6666" };
+        string[] array2 = { "1112223333", "777 888 9999", "1234567890" }; // Дубликаты "111-222-3333" и "123-456-7890"
+        string[] array3 = { "+1-987-654-3210", "4445556666" }; // Дубликат "(444) 555-6666"
+
+        string[] uniqueNumbers = RemoveDuplicatePhoneNumbers(array1, array2, array3);
+
+        Console.WriteLine("Уникальные телефонные номера:");
+        foreach (var number in uniqueNumbers)
+        {
+            Console.WriteLine(number);
+        }
     }
 
 
@@ -176,22 +189,14 @@ class Program
         return uniquePhoneNumbers.ToArray();
     }
 
-    // Вспомогательный метод для очистки телефонного номера.
-    // Это очень важно, если формат номеров может различаться.
+
     private static string CleanPhoneNumber(string phoneNumber)
     {
         if (string.IsNullOrWhiteSpace(phoneNumber))
         {
-            return string.Empty; // Или null, в зависимости от требований
+            return string.Empty;
         }
 
-        // Удаляем все нечисловые символы, кроме, возможно, знака '+' для международных номеров.
-        // Здесь мы упрощаем: удаляем все, кроме цифр.
-        // Более сложная логика может учитывать '+' в начале.
-        return new string(phoneNumber.Where(char.IsDigit).ToArray());
-
-        // Пример более продвинутой очистки:
-        /*
         var sb = new System.Text.StringBuilder();
         foreach (char c in phoneNumber)
         {
@@ -199,12 +204,12 @@ class Program
             {
                 sb.Append(c);
             }
-            else if (c == '+' && sb.Length == 0) // Разрешаем '+' только в самом начале
+            else if (c == '+' && sb.Length == 0)
             {
                 sb.Append(c);
             }
         }
+
         return sb.ToString();
-        */
     }
 }
