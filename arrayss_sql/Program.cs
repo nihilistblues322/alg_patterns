@@ -88,6 +88,34 @@ class Program
         {
             Console.WriteLine(number);
         }
+
+
+        string[] groupA = { "Alice", "Bob", "Charlie", "Diana" };
+        string[] groupB = { "Charlie", "Eve", "Bob", "Frank" };
+
+        var intersection = groupA.Intersect(groupB).ToList();
+
+        Console.WriteLine();
+        Console.Write("Intersection: ");
+        Console.WriteLine(string.Join(", ", intersection));
+
+        string[] warehouse = { "Laptop", "Mouse", "Keyboard", "Monitor" };
+        string[] shop = { "Phone", "Mouse", "Keyboard", "Tablet" };
+
+        var hashed = new HashSet<string>(shop);
+        var result = new List<string>();
+        foreach (var w in warehouse)
+        {
+            if (hashed.Contains(w))
+            {
+                result.Add(w);
+                hashed.Remove(w);
+            }
+        }
+
+        Console.WriteLine();
+        Console.Write("Intersection Imperative: ");
+        Console.WriteLine(string.Join(", ", result));
     }
 
 
