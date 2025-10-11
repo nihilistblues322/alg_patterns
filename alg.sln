@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "packs1", "packs1\packs1.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arrayss_sql", "arrayss_sql\arrayss_sql.csproj", "{F48018F7-5EA4-4C3C-BAC3-9572C2B90847}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainsDuplicate", "ContainsDuplicate\ContainsDuplicate.csproj", "{0D608AF0-4605-41AA-83CB-FB3D0A13A471}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{F48018F7-5EA4-4C3C-BAC3-9572C2B90847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F48018F7-5EA4-4C3C-BAC3-9572C2B90847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F48018F7-5EA4-4C3C-BAC3-9572C2B90847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D608AF0-4605-41AA-83CB-FB3D0A13A471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D608AF0-4605-41AA-83CB-FB3D0A13A471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D608AF0-4605-41AA-83CB-FB3D0A13A471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D608AF0-4605-41AA-83CB-FB3D0A13A471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
