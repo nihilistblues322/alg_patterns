@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        var nums = new[] { 1, 2, 3, 3 };
-        var result = HasDuplicate(nums);
+        var nums = new[] { 3, 2, 1, 3 };
+        var result = HasDuplicate2(nums);
         Console.WriteLine(result);
     }
 
@@ -28,6 +28,7 @@ class Program
 
     static bool HasDuplicate2(int[] nums)
     {
+        Array.Sort(nums);
         for (int i = 0; i < nums.Length - 1; i++)
         {
             if (nums[i] == nums[i + 1])
